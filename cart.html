@@ -11,40 +11,28 @@
 			<a href="index.html" title="TicketHack">TicketHack</a>
 
 			<nav>
-				<a href="cart.html" title="="cart">cart</a>
+				<a href="cart.html" title="cart">cart</a>
 				<a href="bookings.html" title="bookings">bookings</a>
 			</nav>
 		</header>
 
 		<main>
-			<div id="noTicket">
+			<div id="emptyCart">
 				<p>No ticket in your cart.</p>
 				<p>Why not plan a trip?</p>
 			</div>
 
-			<div id="ticketCart">
+			<div id="cart">
 				<h2>My cart</h2>
-				<div class="trip">
-					<p> 
-						<span id="tripDeparture">Paris</span> > <span id="tripArrival">Lyon</span> <span id="tripHours">20:09</span> <span id="tripPrice">103€</span>
-					</p>
-					<button type="button">X</button>
-				</div>
-				<div class="trip">
-					<p> 
-						<span id="tripDeparture">Marseille</span> > <span id="tripArrival">Lyon</span> <span id="tripHours">22:10</span> <span id="tripPrice">127€</span>
-					</p>
-					<button type="button">X</button>
-				</div>
+				<div id="cartContainer"></div>
+
 				<div class="footer">
-					<p> 
-						Total :  <span id="totalPrice">230</span> € 
-					</p>
-					<button type="button">Purchase</button>
+					<p>Total : <span id="totalPrice">230</span> €</p>
+					<button type="button" id="purchase">Purchase</button>
 				</div>
 			</div>
 		</main>
-	
-		<script src="script.js"></script>
+
+		<script type="module" src="cart.js"></script>
 	</body>
 </html>

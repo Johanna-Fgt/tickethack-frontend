@@ -1,6 +1,5 @@
 console.log('Script chargé');
-
-/* INDEX */
+import { getFullHour } from './utils.js';
 const searchBtn = document.querySelector('#searchBtn');
 const departureInput = document.querySelector('#departure');
 const arrivalInput = document.querySelector('#arrival');
@@ -9,6 +8,7 @@ const imageTrain = document.querySelector('#imageTrain');
 const casper = document.querySelector('#casper');
 const tripsContainer = document.querySelector('#tripsContainer');
 
+/* INDEX */
 searchBtn.addEventListener('click', () => {
 	let departure = departureInput.value;
 	let arrival = arrivalInput.value;
@@ -31,13 +31,10 @@ searchBtn.addEventListener('click', () => {
 				//fill the html with trips
 				for (let i = 0; i < trips.length; i++) {
 					let trip = trips[i];
-					let hour =
-						new Date(trip.date).getHours() +
-						':' +
-						new Date(trip.date).getMinutes();
+					let completeHour = getFullHour(trip.date);
 					tripsContainer.innerHTML += `<div class="trip">
                     <p> 
-                        <span >${trip.departure}</span> > <span >${trip.arrival}</span> <span >${hour}</span> <span >${trip.price}€</span>
+                        <span >${trip.departure}</span> > <span >${trip.arrival}</span> <span >${completeHour}</span> <span >${trip.price}€</span>
                     </p>
                     <button type="button" class="book-button" id="${trip._id}" >Book</button>
                 </div>`;
@@ -58,7 +55,6 @@ function bookATrip() {
 		document
 			.querySelectorAll('.book-button')
 			[i].addEventListener('click', () => {
-				console.log();
 				fetch(URL, {
 					method: 'POST',
 					headers: { 'Content-Type': 'application/json' },
@@ -75,35 +71,3 @@ function bookATrip() {
 			});
 	}
 }
-
-/* CART */
-window.addEventListener('load', () => {
-	const URL = 'http://localhost:3000/products';
-
-	fetch(URL)
-		.then((response) => response.json())
-		.then((data) => {
-			const { result, products } = data;
-			if (result) {
-				//products found - fill the html with it
-				for (let i = 0; i < trips.length; i++) {
-					let trip = trips[i];
-					let hour =
-						new Date(trip.date).getHours() +
-						':' +
-						new Date(trip.date).getMinutes();
-					tripsContainer.innerHTML += `<div class="trip">
-                    <p> 
-                        <span >${trip.departure}</span> > <span >${trip.arrival}</span> <span >${hour}</span> <span >${trip.price}€</span>
-                    </p>
-                    <button type="button" class="book-button" id="${trip._id}" >Book</button>
-                </div>`;
-				}
-				bookATrip();
-			} else {
-				// no trip found
-				imageTrain.src = './images/notfound.png';
-				casper.textContent = 'No trip found';
-			}
-		});
-});
