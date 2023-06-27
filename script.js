@@ -26,18 +26,23 @@ searchBtn.addEventListener('click', () => {
 			const { result, trips } = data;
 			if (result) {
 				//trips found
-				console.log(trips);
 				imageTrain.style.display = 'none';
 				casper.style.display = 'none';
+				//fill the html with trips
 				for (let i = 0; i < trips.length; i++) {
 					let trip = trips[i];
+					let hour =
+						new Date(trip.date).getHours() +
+						':' +
+						new Date(trip.date).getMinutes();
 					tripsContainer.innerHTML += `<div class="trip">
                     <p> 
-                        <span >${trip.departure}</span> > <span >${trip.arrival}</span> <span >${trip.date}</span> <span >${trip.price}€</span>
+                        <span >${trip.departure}</span> > <span >${trip.arrival}</span> <span >${hour}</span> <span >${trip.price}€</span>
                     </p>
-                    <button type="button" >Book</button>
+                    <button type="button" class="book-button" id="${trip._id}" >Book</button>
                 </div>`;
 				}
+				bookATrip();
 			} else {
 				// no trip found
 				imageTrain.src = './images/notfound.png';
@@ -46,5 +51,59 @@ searchBtn.addEventListener('click', () => {
 		});
 });
 
-// let hour = new Date(date).getHours() + ' : ' + new Date(date).getMinutes();
-// console.log(hour); // 10 : 16
+function bookATrip() {
+	const URL = 'http://localhost:3000/products';
+
+	for (let i = 0; i < document.querySelectorAll('.book-button').length; i++) {
+		document
+			.querySelectorAll('.book-button')
+			[i].addEventListener('click', () => {
+				console.log();
+				fetch(URL, {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify({
+						id: document.querySelectorAll('.book-button')[i].id,
+					}),
+				})
+					.then((response) => response.json())
+					.then((data) => {
+						if (data.result) {
+							window.location.assign('cart.html');
+						}
+					});
+			});
+	}
+}
+
+/* CART */
+window.addEventListener('load', () => {
+	const URL = 'http://localhost:3000/products';
+
+	fetch(URL)
+		.then((response) => response.json())
+		.then((data) => {
+			const { result, products } = data;
+			if (result) {
+				//products found - fill the html with it
+				for (let i = 0; i < trips.length; i++) {
+					let trip = trips[i];
+					let hour =
+						new Date(trip.date).getHours() +
+						':' +
+						new Date(trip.date).getMinutes();
+					tripsContainer.innerHTML += `<div class="trip">
+                    <p> 
+                        <span >${trip.departure}</span> > <span >${trip.arrival}</span> <span >${hour}</span> <span >${trip.price}€</span>
+                    </p>
+                    <button type="button" class="book-button" id="${trip._id}" >Book</button>
+                </div>`;
+				}
+				bookATrip();
+			} else {
+				// no trip found
+				imageTrain.src = './images/notfound.png';
+				casper.textContent = 'No trip found';
+			}
+		});
+});
