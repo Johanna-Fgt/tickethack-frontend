@@ -11,29 +11,39 @@
 			<a href="index.html" title="Tickethack">Tickethack</a>
 
 			<nav>
-				<a href="cart.html" title="="cart">cart</a>
+				<a href="cart.html" title="cart">cart</a>
 				<a href="bookings.html" title="bookings">bookings</a>
 			</nav>
 		</header>
 		<main>
 			<div id="title">
 				<h1>Explore the world effortlessly by train !</h1>
-				<p>Compare, book and enjoy cheap prices for train tickets: your journey starts on Tickethack.</p>
+				<p>
+					Compare, book and enjoy cheap prices for train tickets: your journey
+					starts on Tickethack.
+				</p>
 			</div>
 			<div class="booking-container">
-				<div><form>
-					<input type="text" id="departure"  >
-					<input type="text" id="arrival" >
-					<input type="date" id="date">
-				  </form> <button type="submit" form="form1" value="Search">Search</button></div>
-
 				<div>
-					<img class="train" src="images/train.png" alt="logo train"/>
-					<p>It's time to book your future trip</p>
+					<form>
+						<input type="text" id="departure" />
+						<input type="text" id="arrival" />
+						<input type="date" id="date" />
+					</form>
+					<button type="submit" id="searchBtn">Search</button>
+				</div>
+
+				<div id="tripsContainer">
+					<img
+						class="train"
+						src="images/train.png"
+						alt="logo train"
+						id="imageTrain" />
+					<p id="casper">It's time to book your future trip</p>
 				</div>
 			</div>
 		</main>
-	
+
 		<script src="script.js"></script>
 	</body>
 </html>
