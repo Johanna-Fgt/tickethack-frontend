@@ -45,3 +45,6 @@ searchBtn.addEventListener('click', () => {
 			}
 		});
 });
+
+// let hour = new Date(date).getHours() + ' : ' + new Date(date).getMinutes();
+// console.log(hour); // 10 : 16
