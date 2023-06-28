@@ -6,24 +6,25 @@
 		<title>TicketHack</title>
 		<link rel="stylesheet" href="style.css" />
 	</head>
-	<body>
-		<header>
-			<a href="index.html" title="Tickethack">Tickethack</a>
 
-			<nav>
-				<a href="cart.html" title="cart">cart</a>
-				<a href="bookings.html" title="bookings">bookings</a>
-			</nav>
-		</header>
-		<main>
-			<div id="title">
-				<h1>Explore the world effortlessly by train !</h1>
-				<p>
+	<body>
+			<header> 
+				<a href="index.html" title="Tickethack" class="title">Tickethack</a>
+				<nav>
+					<a href="cart.html" title="cart">cart</a>
+					<a href="bookings.html" title="bookings">bookings</a>
+				</nav>
+			</header>
+
+			<main>
+				<div id="title">
+					<h1>Explore the world effortlessly by train !</h1>
+					<p>
 					Compare, book and enjoy cheap prices for train tickets: your journey
 					starts on Tickethack.
-				</p>
-			</div>
-			<div class="booking-container">
+					</p>
+				</div>
+				<div class="booking-container">
 				<div>
 					<form>
 						<input type="text" id="departure" />
@@ -33,7 +34,7 @@
 					<button type="submit" id="searchBtn">Search</button>
 				</div>
 
-				<div id="tripsContainer">
+				<div class="tripsContainer">
 					<img
 						class="train"
 						src="images/train.png"
@@ -41,9 +42,9 @@
 						id="imageTrain" />
 					<p id="casper">It's time to book your future trip</p>
 				</div>
-			</div>
-		</main>
-
-		<script type="module" src="script.js"></script>
+				</div>
+			</main>
+		
+			<script type="module" src="script.js"></script>
 	</body>
 </html>
