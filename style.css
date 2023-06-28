@@ -1,32 +1,47 @@
 @import url('https://fonts.googleapis.com/css2?family=Belanosima&family=Open+Sans:wght@500&display=swap');
 
+/* GLOBAL STYLE */
+:root {
+    --color-white: #ffffff;
+    --color-mint: #4bad99;
+    --color-blue-dark: #001648;
+    --color-grey-dark: #bac1c7;
+    --color-grey-light: #f0f1f2;
+    --color-pink-light: #f8eeef;
+    --border-radius-small: 5px;
+    --border-radius-large: 10px;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
 }
+
 /* Scrollbar Chrome */
 *::-webkit-scrollbar {
     width: 8px;
 }
 *::-webkit-scrollbar-track {
     background: transparent;
-    border-radius: 5px;
+    border-radius: var(--border-radius-small);
     margin-block: 10px;
 }
 *::-webkit-scrollbar-thumb {
-    background: #f0f1f2;
-    border-radius: 5px;
+    background: var(--color-grey-light);
+    border-radius: var(--border-radius-small);
 }
 *::-webkit-scrollbar-thumb:hover {
-    background: #bac1c7;
+    background: var(--color-grey-dark);
 }
 
-
 body {
-    background-color: #ffffff;
     font-family: 'Open Sans', sans-serif;
+    background-color: var(--color-white);
+}
+
+a, a:visited {
+    text-decoration: none;
 }
 
 header {
@@ -34,14 +49,10 @@ header {
     height: 8vh;
     padding: 0 20px;
 }
-
 header .title {
-    font-family: 'Belanosima', sans-serif;
-    color: #4bad99;
     font-size: 26px;
-}
-a,  a:visited {
-    text-decoration: none;
+    color: var(--color-mint);
+    font-family: 'Belanosima', sans-serif;
 }
 nav a, nav a:visited{
     color: black;
@@ -55,6 +66,7 @@ header, nav {
 nav {
     gap:20px
 }
+
 main {
     width: 100%;
     height: 92vh;
@@ -72,28 +84,29 @@ main {
     background-size: cover;
 }
 #title {
-    color: white;
+    color: var(--color-white);
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 15px;
+    letter-spacing: 1px;
 }
 #title h1 {
     font-weight: 300;
-    letter-spacing: 1px;
 }
 #title p {
     font-size: 18px;
-    letter-spacing: 1px;
+    text-align: center;
 }
+
 .booking-container {
     display: flex;
     align-items: stretch;
     gap: 200px;
 }
 .booking-container div {
-    background-color: #ffffff;
-    border-radius: 10px;
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-large);
     width: 320px;
     height: 350px;
     padding: 40px 30px;
@@ -103,24 +116,29 @@ main {
     flex-direction: column;
     height: 100%;
 }
+
 .btn {
-    color: white;
-    background-color: #4bad99;
+    cursor: pointer;
     justify-self: flex-end;
+    color: var(--color-white);
+    background-color: var(--color-mint); 
+}
+.btn:hover {
+    opacity: .8;
 }
 .btn, input {
     border: none;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: var(--border-radius-small);
 }
 input {
-    background-color: #f0f1f2;
+    background-color: var(--color-grey-light);
 }
 input:hover {
-    background-color: #bac1c7;
+    background-color: var(--color-grey-dark);
 }
 input:first-child {
-    box-shadow: 0px 2px 0px -1px grey;
+    box-shadow: 0px 2px 0px -1px var(--color-grey-dark);
     margin-bottom: 1px;
 }
 input:last-child {
@@ -129,69 +147,61 @@ input:last-child {
 
 #casper {
     width: 90%;
-   padding: 30px;
-   border-top: 2px #4bad99 solid;
-   text-align: center;
+    padding: 30px;
+    border-top: 2px var(--color-mint) solid;
+    text-align: center;
 }
 #imageTrain {
     margin-top: 20px;
     width: 120px;
 }
-.tripsContainer {
+
+.tripsContainer, #bookingsContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 30px;
     overflow-y: scroll;
     overflow-x: hidden;
-    
 }
-.trip, .tripsContainer .trip, #bookingsContainer {
-    background-color: #f8eeef;
-    width: 100%;
-    padding: 5px;
-    font-size: 16px;
-}
-.tripsContainer .trip {
+.trip, .tripsContainer .trip {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-}
-.tripsContainer .trip p {
+    width: 100%;
+    padding: 5px;
     font-size: 14px;
+    background-color: var(--color-pink-light);
 }
 
 /* BOOKINGS & CART */
 .wrapper {
-    background-color: #f0f1f2;
+    background-color: var(--color-grey-light);
     justify-content: center;
 }
 
 .nothing, #cart,  #validBooking{
-    background-color: #ffffff;
-    border-radius: 10px;
     width: 80%;
     text-align: center;
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-large);
 }
-
 .nothing {
     padding: 30px;
 }
-
 .nothing p {
     padding: 10px;
 }
 
 .footer{
-    background-color: #001648;
     display: flex;
-    color: #ffffff;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     padding: 10px 40px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    color: var(--color-white);
+    background-color: var(--color-blue-dark);
+    border-bottom-left-radius: var(--border-radius-large);
+    border-bottom-right-radius: var(--border-radius-large);
 }
 
 #cart h2, #validBooking h2 {
@@ -199,45 +209,52 @@ input:last-child {
     font-size: 16px;
 }
 
-#cart .trip,  #bookingsContainer{
-    border-radius: 10px;
-    width: 85%;
-    margin: auto;
-    margin-bottom: 30px;
+#cart .trip,  #bookingsContainer .trip{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 85%;
+    margin: auto;
     padding: 15px 10px;
+    border-radius: var(--border-radius-large);
 }
-
-#cart .trip p, #bookingsContainer p {
+#cart .trip{
+    margin-bottom: 30px;
+}
+#cart .trip p {
+    padding-right: 20px;
+}
+.trip p {
     flex: 1 0;
     display: flex;
     justify-content: space-evenly;
 }
-
-#cart .trip p span:nth-child(2){
-    padding: 0 100px;
-}
-
-#cart .trip p span:first-child, #bookingsContainer p span:first-child {
-    width: 30%;
+.trip p span:first-child {
     text-align: left;
 }
+#cart .trip p span:first-child,  #bookingsContainer .trip p span:first-child {
+    width: 30%;
+}
+#cart .trip p span:nth-child(2),  #bookingsContainer .trip p span:nth-child(2) {
+    flex: 1 0;
+}
+.trip p span:nth-child(4){
+    padding-left: 10px;
+}
 
-.tripBookings .enjoy {
-    color: #4bad99;
-    padding: 20px;
+.enjoy {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 20px;
+    padding: 20px;
     font-weight: 700;
+    color: var(--color-mint);
 }
 .enjoy:before {
     content: '';
-    width: 150px;
     height: 2px;
-    background-color: #bac1c7;;
+    width: 150px;
+    background-color: var(--color-grey-dark);;
 }

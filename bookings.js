@@ -1,4 +1,3 @@
-console.log('Script chargé');
 import { getFullHour, getTimeToDeparture } from './utils.js';
 const noBookingHTML = document.querySelector('#noBooking');
 const validBooking = document.querySelector('#validBooking');
@@ -30,13 +29,14 @@ window.addEventListener('load', () => {
 					// Get time before departure on HH:MM format
 					let timeToDeparture = getTimeToDeparture(product.date); //5 hours
 					// Add html element for every product
-					bookingsContainer.innerHTML += `<p>
-					<span>${product.departure} >
-					${product.arrival}</span>
-					<span>${completeHour}</span>
-					<span>${product.price}€</span>
-					<span> Departure in ${timeToDeparture}</span>
-				</p>`;
+					bookingsContainer.innerHTML += `<div class='trip'>
+						<p>
+							<span>${product.departure} > ${product.arrival}</span>
+							<span>${completeHour}</span>
+							<span>${product.price}€</span>
+							<span> Departure in ${timeToDeparture}</span>
+						</p>
+					</div>`;
 				}
 			}
 		});

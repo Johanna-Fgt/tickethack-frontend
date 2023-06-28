@@ -1,10 +1,9 @@
-console.log('Script chargé');
 import { getFullHour } from './utils.js';
-const emptyCartHTML = document.querySelector('#emptyCart');
 const cartHTML = document.querySelector('#cart');
-const cartContainer = document.querySelector('#cartContainer');
-const totalPrice = document.querySelector('#totalPrice');
 const purchaseBtn = document.querySelector('#purchase');
+const totalPrice = document.querySelector('#totalPrice');
+const emptyCartHTML = document.querySelector('#emptyCart');
+const cartContainer = document.querySelector('#cartContainer');
 
 /* CART */
 window.addEventListener('load', () => {

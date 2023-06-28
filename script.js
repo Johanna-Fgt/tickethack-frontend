@@ -1,11 +1,10 @@
-console.log('Script chargé');
 import { getFullHour } from './utils.js';
-const searchBtn = document.querySelector('#searchBtn');
-const departureInput = document.querySelector('#departure');
-const arrivalInput = document.querySelector('#arrival');
-const dateInput = document.querySelector('#date');
-const imageTrain = document.querySelector('#imageTrain');
 const casper = document.querySelector('#casper');
+const dateInput = document.querySelector('#date');
+const searchBtn = document.querySelector('#searchBtn');
+const arrivalInput = document.querySelector('#arrival');
+const imageTrain = document.querySelector('#imageTrain');
+const departureInput = document.querySelector('#departure');
 const tripsContainer = document.querySelector('#tripsContainer');
 
 /* INDEX */
@@ -33,9 +32,11 @@ searchBtn.addEventListener('click', () => {
 				for (let i = 0; i < trips.length; i++) {
 					let trip = trips[i];
 					let completeHour = getFullHour(trip.date);
-					tripsContainer.innerHTML += `<div class="trip">
+					tripsContainer.innerHTML += `<div class='trip'>
                     <p> 
-                        <span >${trip.departure} > ${trip.arrival}</span> <span >${completeHour}</span> <span>${trip.price}€</span>
+                        <span >${trip.departure} > ${trip.arrival}</span>
+						<span >${completeHour}</span>
+						<span>${trip.price}€</span>
                     </p>
                     <button type="button" class="btn book-button" id="${trip._id}" >Book</button>
                 </div>`;
