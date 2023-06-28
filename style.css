@@ -96,15 +96,13 @@ main {
 .booking-container div {
     background-color: #ffffff;
     border-radius: 10px;
-    width: 300px;
+    width: 320px;
     height: 350px;
     padding: 40px 30px;
 }
 .booking-container div:first-child,  .booking-container div:first-child  form {
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
-    /* justify-content: center; */
     height: 100%;
 }
 .btn {
@@ -149,16 +147,25 @@ input:last-child {
     gap: 30px;
     overflow-y: scroll;
     overflow-x: hidden;
+    
 }
-.trip, #bookingsContainer {
+.trip, .tripsContainer .trip, #bookingsContainer {
     background-color: #f8eeef;
     width: 100%;
     padding: 5px;
     font-size: 16px;
 }
+.tripsContainer .trip {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.tripsContainer .trip p {
+    font-size: 14px;
+}
 
 /* BOOKINGS & CART */
-
 .wrapper {
     background-color: #f0f1f2;
     justify-content: center;
@@ -198,10 +205,11 @@ input:last-child {
 
 #cart .trip,  #bookingsContainer{
     border-radius: 10px;
-    width: 80%;
+    width: 85%;
     margin: auto;
     margin-bottom: 30px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
     padding: 15px 10px;
 }
@@ -209,9 +217,10 @@ input:last-child {
 #cart .trip p, #bookingsContainer p {
     flex: 1 0;
     display: flex;
+    justify-content: space-evenly;
 }
 
-#cart .trip p span:nth-child(2), #bookingsContainer p span:nth-child(2){
+#cart .trip p span:nth-child(2){
     padding: 0 100px;
 }
 
@@ -220,5 +229,20 @@ input:last-child {
     text-align: left;
 }
 
-
-
+.tripBookings .enjoy {
+    color: #4bad99;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-weight: 700;
+}
+.enjoy:before {
+    content: '';
+    width: 150px;
+    height: 2px;
+    /* display: block; */
+    background-color: #bac1c7;;
+}

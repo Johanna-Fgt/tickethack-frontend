@@ -34,7 +34,7 @@ searchBtn.addEventListener('click', () => {
 					let completeHour = getFullHour(trip.date);
 					tripsContainer.innerHTML += `<div class="trip">
                     <p> 
-                        <span >${trip.departure}</span> > <span >${trip.arrival}</span> <span >${completeHour}</span> <span >${trip.price}€</span>
+                        <span >${trip.departure} > ${trip.arrival}</span> <span >${completeHour}</span> <span>${trip.price}€</span>
                     </p>
                     <button type="button" class="btn book-button" id="${trip._id}" >Book</button>
                 </div>`;
