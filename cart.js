@@ -31,8 +31,8 @@ window.addEventListener('load', () => {
 					// Add html element for every product
 					cartContainer.innerHTML += `<div class="trip">
 					    <p>
-					        <span >${product.departure}</span> >
-							<span >${product.arrival}</span>
+					        <span >${product.departure} >
+							${product.arrival}</span>
 							<span >${completeHour}</span>
 							<span >${product.price}€</span>
 					    </p>

@@ -31,8 +31,8 @@ window.addEventListener('load', () => {
 					let timeToDeparture = getTimeToDeparture(product.date); //5 hours
 					// Add html element for every product
 					bookingsContainer.innerHTML += `<p>
-					<span>${product.departure}</span> >
-					<span>${product.arrival}</span>
+					<span>${product.departure} >
+					${product.arrival}</span>
 					<span>${completeHour}</span>
 					<span>${product.price}€</span>
 					Departure in <span>${timeToDeparture}</span>
