@@ -8,6 +8,7 @@ const purchaseBtn = document.querySelector('#purchase');
 
 /* CART */
 window.addEventListener('load', () => {
+	// const URL = 'http://localhost:3000/products';
 	const URL = 'https://tickethack-backend-dun.vercel.app/products';
 	cartHTML.style.display = 'none';
 	emptyCartHTML.style.display = 'block';
@@ -17,7 +18,7 @@ window.addEventListener('load', () => {
 			const { result, products } = data;
 			let total = 0;
 			if (result) {
-				//products found - display cart and remove empty cart message
+				// Products found - display cart and remove empty cart message
 				emptyCartHTML.style.display = 'none';
 				cartHTML.style.display = 'block';
 
@@ -51,11 +52,13 @@ window.addEventListener('load', () => {
 });
 
 purchaseBtn.addEventListener('click', () => {
+	// const URL = 'http://localhost:3000/products/paid';
 	const URL = 'https://tickethack-backend-dun.vercel.app/products/paid';
+
+	// Get every button's id
 	const btns = document.querySelectorAll('.delete-button');
 	const ids = [];
 	btns.forEach((btn) => ids.push(btn.id));
-	console.log(ids);
 
 	fetch(URL, {
 		method: 'PUT',
@@ -63,13 +66,12 @@ purchaseBtn.addEventListener('click', () => {
 		body: JSON.stringify({ ids }),
 	})
 		.then((response) => response.json())
-		.then((data) => {
-			if (data.result) window.location.assign('bookings.html');
-		});
+		.then((data) => data.result && window.location.assign('bookings.html'));
 });
 
 function deleteAProduct() {
 	const URL = 'https://tickethack-backend-dun.vercel.app/products/delete';
+	// const URL = 'http://localhost:3000/products/delete';
 
 	for (let i = 0; i < document.querySelectorAll('.delete-button').length; i++) {
 		let btn = document.querySelectorAll('.delete-button')[i];

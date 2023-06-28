@@ -1,12 +1,12 @@
 console.log('Script chargé');
 import { getFullHour, getTimeToDeparture } from './utils.js';
-
 const noBookingHTML = document.querySelector('#noBooking');
 const validBooking = document.querySelector('#validBooking');
 const bookingsContainer = document.querySelector('#bookingsContainer');
 
 /* BOOKINGS */
 window.addEventListener('load', () => {
+	// const URL = 'http://localhost:3000/products/paid ';
 	const URL = 'https://tickethack-backend-dun.vercel.app/products/paid ';
 	validBooking.style.display = 'none';
 	noBookingHTML.style.display = 'block';
