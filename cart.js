@@ -63,7 +63,9 @@ purchaseBtn.addEventListener('click', () => {
 		body: JSON.stringify({ ids }),
 	})
 		.then((response) => response.json())
-		.then((data) => data.result && window.location.assign('bookings.html'));
+		.then((data) => {
+			if (data.result) window.location.assign('bookings.html');
+		});
 });
 
 function deleteAProduct() {
