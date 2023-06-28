@@ -36,7 +36,7 @@ window.addEventListener('load', () => {
 							<span >${completeHour}</span>
 							<span >${product.price}€</span>
 					    </p>
-					    <button type="button" class="delete-button" id="${product._id}" >X</button>
+					    <button type="button" class="btn delete-button" id="${product._id}" >X</button>
 					</div>`;
 
 					// Calculate total price

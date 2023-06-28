@@ -8,33 +8,33 @@
 	</head>
 
 	<body>
-			<header> 
-				<a href="index.html" title="Tickethack" class="title">Tickethack</a>
-				<nav>
-					<a href="cart.html" title="cart">cart</a>
-					<a href="bookings.html" title="bookings">bookings</a>
-				</nav>
-			</header>
+		<header>
+			<a href="index.html" title="Tickethack" class="title">Tickethack</a>
+			<nav>
+				<a href="cart.html" title="cart">Cart</a>
+				<a href="bookings.html" title="bookings">Bookings</a>
+			</nav>
+		</header>
 
-			<main>
-				<div id="title">
-					<h1>Explore the world effortlessly by train !</h1>
-					<p>
+		<main id="index">
+			<div id="title">
+				<h1>Explore the world effortlessly by train !</h1>
+				<p>
 					Compare, book and enjoy cheap prices for train tickets: your journey
 					starts on Tickethack.
-					</p>
-				</div>
-				<div class="booking-container">
+				</p>
+			</div>
+			<div class="booking-container">
 				<div>
 					<form>
-						<input type="text" id="departure" />
-						<input type="text" id="arrival" />
+						<input type="text" id="departure" placeholder="Departure" />
+						<input type="text" id="arrival" placeholder="Arrival" />
 						<input type="date" id="date" />
 					</form>
-					<button type="submit" id="searchBtn">Search</button>
+					<button type="submit" id="searchBtn" class="btn">Search</button>
 				</div>
 
-				<div class="tripsContainer">
+				<div class="tripsContainer" id="tripsContainer">
 					<img
 						class="train"
 						src="images/train.png"
@@ -42,9 +42,9 @@
 						id="imageTrain" />
 					<p id="casper">It's time to book your future trip</p>
 				</div>
-				</div>
-			</main>
-		
-			<script type="module" src="script.js"></script>
+			</div>
+		</main>
+
+		<script type="module" src="script.js"></script>
 	</body>
 </html>

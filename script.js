@@ -36,7 +36,7 @@ searchBtn.addEventListener('click', () => {
                     <p> 
                         <span >${trip.departure}</span> > <span >${trip.arrival}</span> <span >${completeHour}</span> <span >${trip.price}€</span>
                     </p>
-                    <button type="button" class="book-button" id="${trip._id}" >Book</button>
+                    <button type="button" class="btn book-button" id="${trip._id}" >Book</button>
                 </div>`;
 				}
 				bookATrip();
