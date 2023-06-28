@@ -34,7 +34,7 @@ window.addEventListener('load', () => {
 					<span>${product.departure}</span> >
 					<span>${product.arrival}</span>
 					<span>${completeHour}</span>
-					<span>${product.price}</span>
+					<span>${product.price}€</span>
 					Departure in <span>${timeToDeparture}</span>
 				</p>`;
 				}
