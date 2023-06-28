@@ -7,7 +7,7 @@ const bookingsContainer = document.querySelector('#bookingsContainer');
 
 /* BOOKINGS */
 window.addEventListener('load', () => {
-	const URL = 'http://localhost:3000/products/paid ';
+	const URL = 'https://tickethack-backend-dun.vercel.app/products/paid ';
 	validBooking.style.display = 'none';
 	noBookingHTML.style.display = 'block';
 	fetch(URL)

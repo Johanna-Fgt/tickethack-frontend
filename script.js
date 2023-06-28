@@ -13,7 +13,7 @@ searchBtn.addEventListener('click', () => {
 	let departure = departureInput.value;
 	let arrival = arrivalInput.value;
 	let date = dateInput.value; // '2023-06-27'
-	const URL = 'http://localhost:3000/trips';
+	const URL = 'https://tickethack-backend-dun.vercel.app/trips';
 	const config = {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json' },
@@ -49,7 +49,7 @@ searchBtn.addEventListener('click', () => {
 });
 
 function bookATrip() {
-	const URL = 'http://localhost:3000/products';
+	const URL = 'https://tickethack-backend-dun.vercel.app/products';
 
 	for (let i = 0; i < document.querySelectorAll('.book-button').length; i++) {
 		document

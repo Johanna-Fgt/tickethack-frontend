@@ -8,7 +8,7 @@ const purchaseBtn = document.querySelector('#purchase');
 
 /* CART */
 window.addEventListener('load', () => {
-	const URL = 'http://localhost:3000/products';
+	const URL = 'https://tickethack-backend-dun.vercel.app/products';
 	cartHTML.style.display = 'none';
 	emptyCartHTML.style.display = 'block';
 	fetch(URL)
@@ -51,7 +51,7 @@ window.addEventListener('load', () => {
 });
 
 purchaseBtn.addEventListener('click', () => {
-	const URL = 'http://localhost:3000/products/paid';
+	const URL = 'https://tickethack-backend-dun.vercel.app/products/paid';
 	const btns = document.querySelectorAll('.delete-button');
 	const ids = [];
 	btns.forEach((btn) => ids.push(btn.id));
@@ -69,7 +69,7 @@ purchaseBtn.addEventListener('click', () => {
 });
 
 function deleteAProduct() {
-	const URL = 'http://localhost:3000/products/delete';
+	const URL = 'https://tickethack-backend-dun.vercel.app/products/delete';
 
 	for (let i = 0; i < document.querySelectorAll('.delete-button').length; i++) {
 		let btn = document.querySelectorAll('.delete-button')[i];
